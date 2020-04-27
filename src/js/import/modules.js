@@ -1,2 +1,5 @@
-import "%modules%/header/header";
+import "%modules%/navigation-line/navigation-line"
+import "%modules%/hero-slider/hero-slider"
+import "%modules%/gallery/gallery"
+import "%modules%/testimonials-section/testimonials-section"
 import "%modules%/footer/footer"

@@ -68,7 +68,10 @@
         "yargs": "^13.2.4"
     },
     "dependencies": {
-        "smart-grid": "^2.1.2"
+        "@glidejs/glide": "^3.4.1",
+        "animejs": "^3.2.0",
+        "smart-grid": "^2.1.2",
+        "spotlight.js": "^0.6.5"
     },
     "husky": {
         "hooks": {

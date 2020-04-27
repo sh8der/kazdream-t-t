@@ -1,12 +1,124 @@
-h1, h2, h3, h4, h5, h6, ul {
-    margin: 0;
-    padding: 0;
+* {
+  font-weight: 400;
+  font-family: "Lato";
+  color: $grey-color;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    @include container();
-    @include sm(max-width, rem(510));
-    @include md(max-width, rem(690));
-    @include lg(max-width, rem(930));
-    @include xl(max-width, rem(1110));
+  @include container();
+  @include sm(max-width, calc(100% - 30px));
+  @include lg(max-width, rem(930));
+  @include xl(max-width, rem(1230));
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.headline-title {
+  font-size: rem(48);
+  color: #fff;
+  font-weight: 100;
+  text-shadow: 0 1px 3px rgba(#000, 0.35);
+
+  @include to($break_sm) {
+    font-size: rem(36);
+  }
+
+  * {
+    color: #fff;
+  }
+}
+
+.headline-desc {
+  color: #fff;
+  font-size: rem(18);
+  line-height: rem(23);
+  font-weight: 100;
+  margin: rem(18) 0 rem(37) 0;
+
+  @include to($break_sm) {
+    font-size: rem(16);
+    line-height: rem(21);
+  }
+}
+
+.title {
+  color: $grey-color;
+  font-size: rem(36);
+  font-weight: 900;
+  text-align: center;
+}
+
+.subtitle {
+  color: $grey-color;
+  font-size: rem(20);
+  font-weight: 100;
+  text-align: center;
+}
+
+.button {
+  background-color: #fff;
+  color: $grey-color;
+  text-transform: uppercase;
+  border-radius: rem(8);
+  padding: rem(22) rem(50);
+  border: none;
+  font-weight: bold;
+  font-size: rem(15);
+  cursor: pointer;
+
+  & + & {
+    margin-left: rem(40);
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #fff;
+      color: $grey-color;
+    }
+  }
+
+  &--primary {
+    background-color: $primary-color;
+    color: #fff;
+    border-bottom: 4px solid #277697;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: darken($primary-color, 25%);
+    }
+  }
+
+  &--dark {
+    background-color: #414042;
+    color: $primary-color;
+    font-size: rem(15);
+    font-weight: bold;
+    padding: rem(16) rem(80);
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+    text-transform: capitalize;
+
+    &:hover {
+      background-color: lighten(#414042, 10%);
+    }
+  }
 }

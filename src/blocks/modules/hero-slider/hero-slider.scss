@@ -1,0 +1,212 @@
+.hero-slider {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__items {
+    height: 100%;
+    align-items: center;
+  }
+
+  &__item {
+    display: flex;
+    flex-flow: row wrap;
+    overflow: hidden;
+  }
+
+  &__left-side {
+    height: 100%;
+    align-items: center;
+    display: flex;
+    @include size-xl(5);
+    @include size-lg(5);
+    @include size-md(4);
+    @include col();
+    @include to($break_md) {
+      display: none;
+    }
+    position: relative;
+
+    img {
+      height: auto;
+      position: absolute;
+      left: -232px;
+      bottom: -97px;
+      transform: rotate(-11deg);
+      width: 740px;
+
+      @include to($break_lg) {
+        transform: scale(0.5) translateX(-20%) translateY(-20%) rotate(-11deg);
+      }
+    }
+  }
+
+  &__right-side {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: rem(240);
+
+    @include size-xl(7);
+    @include size-lg(7);
+    @include size-md(8);
+    @include col();
+
+    @include to($break_lg) {
+      padding: rem(10) 0;
+      justify-content: center;
+    }
+  }
+
+  &__content-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 100%;
+    width: rem(1200);
+    margin: 0 auto;
+  }
+
+  &__desc {
+    margin: rem(18) 0 rem(37) 0;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 50px;
+
+    @include to($break_sm) {
+      flex-flow: column wrap;
+      // justify-content: flex-start;
+      align-items: center;
+    }
+  }
+
+  &__button + &__button {
+    @include to($break_sm) {
+      margin-left: 0;
+      margin-top: rem(20);
+    }
+  }
+
+  &__adition-links {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+    @include to($break_sm) {
+      justify-content: center;
+    }
+  }
+
+  &__adition-link-text {
+    font-size: rem(18);
+    color: #fff;
+    font-weight: 100;
+  }
+
+  &__adition-link {
+    background-color: rgba(#000, 0.35);
+    color: #fff;
+    width: rem(50);
+    height: rem(50);
+    border-radius: 50%;
+    padding: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: rem(23);
+
+    &:hover svg {
+      fill: $primary-color;
+    }
+
+    svg {
+      max-width: 100%;
+      width: 100%;
+      fill: #fff;
+      transition: fill 0.3s ease-in-out;
+    }
+  }
+
+  &__button-controls {
+    position: absolute;
+    display: flex;
+    width: rem(1230);
+    @include xl(width, rem(1230));
+    @include lg(width, rem(992));
+    height: 0px;
+    justify-content: space-between;
+    top: calc(50% - 75px);
+  }
+
+  &__button-control {
+    background-color: $primary-color;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    padding: 21px;
+    justify-self: center;
+    align-items: center;
+    top: 0;
+    border-radius: 50%;
+    border: none;
+    position: relative;
+    opacity: 0.2;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &--prev-btn {
+      @include xl(left, rem(-55));
+      @include lg(left, rem(-45));
+      transform: rotateZ(180deg);
+    }
+
+    &--next-btn {
+      @include xl(left, rem(55));
+      @include lg(left, rem(45));
+    }
+
+    svg {
+      max-width: 100%;
+      width: 100%;
+      fill: #fff;
+    }
+  }
+
+  &__bullets {
+    position: relative;
+    bottom: 27px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__bullet {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin: 0 6px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 50%;
+  }
+}
+
+.glide__bullet--active,
+.glide__bullet:focus {
+  background-color: $primary-color;
+  box-shadow: 0 0 0 2px $primary-color;
+  border: none;
+}
+
+.glide__track {
+  height: 100%;
+}

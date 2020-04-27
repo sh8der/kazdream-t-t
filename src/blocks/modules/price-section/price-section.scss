@@ -1,0 +1,142 @@
+.price-section {
+  padding: rem(65) 0;
+
+  &__items {
+    padding-top: rem(54);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include to($break_md) {
+      flex-flow: row wrap;
+    }
+  }
+
+  &__item {
+    background-color: #f9f9f9;
+    border: 1px solid #dad7d7;
+    margin: 0 15px;
+    width: rem(300);
+    border-radius: rem(5);
+    overflow: hidden;
+    padding-bottom: rem(20);
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+
+    &--active {
+      width: rem(370);
+    }
+
+    @include to($break_lg) {
+      margin-bottom: rem(30);
+    }
+  }
+
+  &__item--active &__pack-name {
+    color: $primary-color;
+    font-size: rem(22);
+  }
+
+  &__pack-name {
+    width: 100%;
+    height: rem(70);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: rem(17);
+    color: #d7d7d7;
+    letter-spacing: rem(-0.5);
+    text-transform: uppercase;
+
+    @include to($break_lg) {
+      text-align: center;
+    }
+  }
+
+  &__price-value {
+    height: rem(115);
+    width: 100%;
+    font-family: "DroidSans";
+    font-weight: bold;
+    font-size: rem(85);
+    letter-spacing: rem(-3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(#000, 0.4);
+
+    &--bg__green-color {
+      background-color: $primary-green-color;
+    }
+
+    &--bg__primary-color {
+      background-color: $primary-color;
+    }
+
+    &--bg__orange-color {
+      background-color: $primary-orange-color;
+    }
+  }
+
+  &__item--active &__pack-detail li {
+    color: $primary-color;
+  }
+
+  &__pack-detail {
+    padding: rem(21) 0;
+    
+    li {
+      color: #d7d7d7;
+      font-size: rem(18);
+      line-height: rem(40);
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+  &__order-btn {
+    height: rem(50);
+    padding: 0 rem(45);
+    font-weight: bold;
+    font-size: rem(15);
+    color: #fff;
+    border: none;
+    border-radius: rem(5);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+
+    &--bg__green-color {
+      background-color: $primary-green-color;
+
+      &:hover {
+        background-color: darken($primary-green-color, 20%);
+      }
+    }
+
+    &--bg__primary-color {
+      background-color: $primary-color;
+
+      &:hover {
+        background-color: darken($primary-color, 20%);
+      }
+    }
+
+    &--bg__orange-color {
+      background-color: $primary-orange-color;
+
+      &:hover {
+        background-color: darken($primary-orange-color, 20%);
+      }
+    }
+  }
+
+  &__items,
+  &__pack-detail {
+    list-style-type: none;
+  }
+}

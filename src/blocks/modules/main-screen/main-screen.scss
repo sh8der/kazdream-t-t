@@ -1,0 +1,17 @@
+.main-screen {
+  height: rem(800);
+  @include xl(height, rem(800));
+  @include lg(height, rem(800));
+  @include md(height, rem(800));
+  @include sm(height, rem(600));
+  // Делаем серый фон, чтобы если ещё не загрузилась картинка -- было видно текст
+  background-color: $grey-color;
+  background-image: url('/img/header/bg.webp');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 4px solid $primary-color;
+  overflow: hidden;
+}

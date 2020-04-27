@@ -1,0 +1,46 @@
+footer {
+  background-color: $grey-color;
+  color: #fff;
+  height: 110px;
+}
+
+.footer_content {
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  display: flex;
+  height: 100%;
+
+  &__copyright {
+    color: rgba(#fff, 0.25);
+
+    @include to($break_md) {
+      text-align: center;
+    }
+  }
+
+  &__meta {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+
+    a {
+      color: rgba(#fff, 0.25);
+      text-decoration: none;
+      padding: 0 10px;
+      position: relative;
+    }
+
+    a + a::before {
+      content: "|";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    
+    @include to($break_md) {
+      text-align: center;
+    }
+  }
+}

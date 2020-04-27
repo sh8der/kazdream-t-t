@@ -8,7 +8,8 @@ gulp.task("serve", () => {
     browsersync.init({
         server: "./dist/",
         port: 4000,
-        notify: true
+        notify: true,
+        // host: "192.168.1.111"
     });
 
     gulp.watch(paths.views.watch, gulp.parallel("views"));

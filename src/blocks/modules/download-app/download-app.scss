@@ -1,0 +1,21 @@
+.download-app {
+  background-color: #414042;
+  padding: rem(30) 0 rem(30);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+
+  &__title {
+    font-weight: bold;
+    font-size: rem(55);
+    letter-spacing: rem(-2.8);
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $grey-color;
+    padding: rem(22) rem(30);
+    margin-top: rem(24);
+  }
+}

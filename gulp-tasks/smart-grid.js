@@ -11,10 +11,12 @@ gulp.task("smart-grid", (cb) => {
         offset: "1.875rem", // gutter width - 30px
         mobileFirst: true,
         mixinNames: {
-            container: "container"
+            container: "container",
+            maxWidth: "1170px"
         },
         container: {
-            fields: "0.9375rem" // side fields - 15px
+            fields: "1.875rem" // side fields - 30px
+            // fields: "0.9375rem" // side fields - 15px
         },
         breakPoints: {
             xs: {
